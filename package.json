@@ -1,0 +1,14 @@
+{
+  "name": "java-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ArrayObject.js",
+  "scripts": {
+    "nodemon":"nodemon basic.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
