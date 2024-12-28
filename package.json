@@ -4,11 +4,14 @@
   "description": "",
   "main": "ArrayObject.js",
   "scripts": {
-    "nodemon":"nodemon basic.js"
+    "nodemon": "nodemon basic.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "bull": "^4.16.3"
   }
 }
