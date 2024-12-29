@@ -39,7 +39,7 @@
 
 
 
-// CommonJS (CJS)
+// CommonJS (CJS) // exports  and module.exports are keyword of CommonJS
 // Definition: CommonJS is a module system used primarily in Node.js for managing modules.
 //  It allows you to import and export code between different files.
 // Key Features:
@@ -96,8 +96,35 @@ greet();
 // Designed as part of the ECMAScript standard for modern JavaScript.
 // More static: The structure of exports is determined at compile-time, not runtime.
 
+ //default export is a feature of ECMAScript Modules (ESM). It allows you to export a single value, 
+ // function, or class from a module as the default export, which can then be imported without using
+ //  curly braces in another module.
 
-                        
+// file: mathUtils.js
+export default function add(a, b) {
+    return a + b;
+}
+// file: main.js
+import add from './mathUtils.js';
+console.log(add(2, 3)); // Outputs: 5
+
+//A module can have only one default export.
+//Attempting to declare multiple default exports will result in an error.
+//You can combine default and named exports in the same file:
+
+export default function add(a, b) {
+    return a + b;
+}
+
+export const PI = 3.14159;
+// Importing both:
+
+import add, { PI } from './mathUtils.js';
+console.log(add(2, 3)); // Outputs: 5
+console.log(PI); // Outputs: 3.14159
+//In contrast, CommonJS modules, the default module system in Node.js before the adoption of ESM, 
+// use module.exports and require() for exporting and importing. CommonJS does not have a native 
+// concept of default exports but mimics it by assigning a value to module.exports.                        
 //          ======================>How TypeScript Handles <===========================
 
 //TypeScript supports both CommonJS and ES Modules (ESM).
